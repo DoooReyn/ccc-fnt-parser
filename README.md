@@ -20,6 +20,12 @@ FNT 字体配置通用解析器（提供 Cocos Creator 专供解析器）
 ## 手动创建 BitmapFont 示例
 
 ```typescript
+/**
+ * 创建 BitmapFont
+ * @warn 请开发者自行加载字体配置文件和字体纹理
+ * @param fntInfo 字体配置信息
+ * @param frame 字体纹理
+ */
 function createBitmapFont(fntInfo: { [key: string]: any }, frame: SpriteFrame) {
     const bmfont = new BitmapFont();
     bmfont.fntConfig = fntInfo;
