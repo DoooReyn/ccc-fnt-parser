@@ -16,3 +16,16 @@ FNT 字体配置通用解析器（提供 Cocos Creator 专供解析器）
 
 -   可以单独引入 `fnt-parser.ts` 文件或修改 `index.ts` 中的 `main` 方法，以获取自定义的转换结果
 -   也可以运行 `bun run index.ts path/to/fnt path/to/json` 直接获取 Cocos Creator 专供的解析结果
+
+## 手动创建 BitmapFont 示例
+
+```typescript
+function createBitmapFont(fntInfo: { [key: string]: any }, frame: SpriteFrame) {
+    const bmfont = new BitmapFont();
+    bmfont.fntConfig = fntInfo;
+    bmfont.spriteFrame = frame;
+    bmfont.addRef();
+    bmfont.onLoaded();
+    return bmfont;
+}
+```
